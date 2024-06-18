@@ -43,8 +43,13 @@ def client_login():
     
     return client
     
-test_client = client_login()
-test_user = test_client.get_user_by_id("ericsmith1302")
-print(test_user)
+try:
+    print("Logging in...")
+    test_client = client_login()
+    print("Login successful")
+    test_user = test_client.get_user_by_id("ericsmith1302")
+    print(test_user)
+except Exception as e:
+    print(e)
 
       
